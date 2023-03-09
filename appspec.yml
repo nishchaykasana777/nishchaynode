@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/my-node-app
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      runas: root
+    - location: scripts/start_server.sh
+      runas: root
+
